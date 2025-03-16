@@ -21,6 +21,7 @@ The project is to introduce Diet-Fit, an application that combines a diet planne
     for the backend. Integrated diet planning with exercise tracking for a holistic fitness approach.
     
   Get information from user personal details like height, weight, diet paln based on user information. the program process the data to calculate BMI(Body mass index) value by help of numpy and pandas. Based on     BMI level the app give diet plans by pre define plans. if user before start the exercise the app ask what workout you should do. how many cout you should do. then the app track the user using OpenCV algorithm    by help of camera. implement pose detection algorithm with help of **MediaPipe, Tensorflow**. these algorithm track the user exercise count. onces count reach the user input it give alert. also it give alert     if user workout in wrong pose.
+  
 ![image](https://github.com/user-attachments/assets/83609d4b-16c5-4d77-89d4-8170a3073e9c)
 
 
