@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan</title>
+</head>
+<body>
+    <h1>Your Diet Plan</h1>
+    <p>BMI: {{ bmi }}</p>
+    <h2>Breakfast</h2>
+    <p>{{ diet_plan['breakfast'] }}</p>
+    <h2>Snack</h2>
+    <p>{{ diet_plan['snack'] }}</p>
+    <h2>Lunch</h2>
+    <p>{{ diet_plan['lunch'] }}</p>
+    <h2>Second Snack</h2>
+    <p>{{ diet_plan['snack2'] }}</p>
+    <h2>Dinner</h2>
+    <p>{{ diet_plan['dinner'] }}</p>
+    {% if exercise %}
+    <h2>Exercise Video</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('download_file', filename=exercise + '.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    {% endif %}
+</body>
+</html>

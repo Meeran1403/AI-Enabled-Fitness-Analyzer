@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Diet Plan</title>
+    <!-- Font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,300;0,400;1,300&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            /* Light grey background */
+            color: #343a40;
+            /* Dark grey text */
+            padding: 20px;
+            /* Add some padding */
+            font-family: "Kanit", sans-serif;
+            /* font mention */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url("../videos/app.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+
+        h1 {
+            color: #007bff;
+            /* Blue heading */
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #6c757d;
+            display: flex;
+            justify-content: center;
+        }
+
+        h2,
+        h3 {
+            color: #6c757d;
+            /* Dark grey heading */
+            padding: 7px;
+        }
+        .workrecom{
+            padding-top: 150px;
+        }
+        .dietrecom{
+            padding-top: 20px;
+        }
+        strong {
+            font-weight: bold;
+            /* Bold text */
+        }
+        .bmi-level1{
+            color: #00d5ff;
+            font-size: larger;
+            margin-left: 8px;
+            font-weight: 900;
+            /* -webkit-text-stroke:0.3px #000000; */
+        }
+        .bmi-level2{
+            color: #00d220;
+            font-size: large;
+            margin-left: 8px;
+            font-weight: 900;
+            /* -webkit-text-stroke:0.3px #000000; */
+        }
+        .bmi-level3{
+            color: #ff0000;
+            font-size: larger;
+            margin-left: 8px;
+            font-weight: 900;
+            /* -webkit-text-stroke:0.3px #000000; */
+        }
+
+        ul {
+            list-style-type: none;
+            /* Remove bullet points */
+            padding-left: 0;
+            /* Remove default padding */
+        }
+
+        li {
+            margin-bottom: 10px;
+            /* Add some space between list items */
+            margin-left: 8px;
+            padding: 10px;
+        }
+
+        video {
+            margin-top: 20px;
+            /* Add space above video */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Shadow */
+            border-radius: 5px;
+            /* Rounded corners */
+        }
+
+        button {
+            background-color: #007bff;
+            /* Blue button background */
+            color: #ffffff;
+            /* White text */
+            border: none;
+            /* No border */
+            padding: 10px 20px;
+            /* Add some padding */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Cursor on hover */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+        .Workout-recommend{
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="back">
+        <div class="container">
+            <h1 class="dietrecom">Your Personalized Diet Plan</h1>
+            <h2>BMI: {{ bmi }}</h2>
+            <p class="bmi-level1"><strong></strong> {{ diet_plan['level1']}}</p>
+            <p class="bmi-level2"><strong></strong> {{ diet_plan['level2']}}</p>
+            <p class="bmi-level3"><strong></strong> {{ diet_plan['level3']}}</p>
+            <h3>Suggested Diet Plan</h3>
+            <ul>
+                <li><strong>Breakfast:</strong> {{ diet_plan['breakfast'] }}</li>
+                <li><strong>Snack:</strong> {{ diet_plan['snack'] }}</li>
+                <li><strong>Lunch:</strong> {{ diet_plan['lunch'] }}</li>
+                <li><strong>Snack:</strong> {{ diet_plan['snack2'] }}</li>
+                <li><strong>Dinner:</strong> {{ diet_plan['dinner'] }}</li>
+            </ul>
+            <h1 class="workrecom">Your Personalized Workout Recommentation</h1>
+            <h3>Exercise</h3>
+            <ul>
+                <li class="Workout-recommend"><strong>Push-up:</strong> {{ exercise_counts['pushup'] }}</li>
+                <li class="Workout-recommend"><strong>Squat:</strong> {{ exercise_counts['squat'] }}</li>
+                <li class="Workout-recommend"><strong>Biceps:</strong> {{ exercise_counts['Biceps'] }}</li>
+                <li class="Workout-recommend"><strong>ABS:</strong> {{ exercise_counts['ABS'] }}</li>
+                <li class="Workout-recommend"><strong>Pull-up:</strong> {{ exercise_counts['pullup'] }}</li>
+            </ul>
+            <h3>Exercise Video</h3>
+            <video width="320" height="240" controls autoplay loop>
+                <source src="{{ url_for('static', filename=video_file) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+
+</html>
